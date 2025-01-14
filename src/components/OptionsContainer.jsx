@@ -29,7 +29,7 @@ function OptionsContainer() {
         positionLeft={10}
       />
       <Option
-        option="paper"
+        option="scissors"
         color1="hsl(39, 89%, 49%)"
         color2="hsl(40, 84%, 53%)"
         image="./images/icon-scissors.svg"
@@ -38,7 +38,7 @@ function OptionsContainer() {
         positionLeft={65}
       />
       <Option
-        option="paper"
+        option="rock"
         color1="hsl(349, 71%, 52%)"
         color2="hsl(349, 70%, 56%)"
         image="./images/icon-rock.svg"

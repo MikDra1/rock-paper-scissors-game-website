@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Counter from "./components/Counter";
 import OptionsContainer from "./components/OptionsContainer";
+import Rules from "./components/Rules";
 
 const Container = styled.div`
   background: radial-gradient(circle at top, hsl(214, 47%, 23%),hsl(237, 49%, 15%));
@@ -17,6 +18,7 @@ function App() {
     <Container>
       <Counter />
       <OptionsContainer />
+      <Rules />
     </Container>
   );
 }
