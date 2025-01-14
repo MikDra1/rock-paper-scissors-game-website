@@ -39,7 +39,7 @@ const RulesButton = styled.button`
 `;
 
 function Rules() {
-  const [showRules, setShowRules] = useState(true);
+  const [showRules, setShowRules] = useState(false);
 
   return (
     <>

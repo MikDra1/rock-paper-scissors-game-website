@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Counter from "./components/Counter";
 import OptionsContainer from "./components/OptionsContainer";
 import Rules from "./components/Rules";
+import { useGame } from "./context/GameProvider";
+import FightSummary from "./components/FightSummary";
 
 const Container = styled.div`
   background: radial-gradient(circle at top, hsl(214, 47%, 23%),hsl(237, 49%, 15%));
@@ -14,10 +16,13 @@ const Container = styled.div`
 `;
 
 function App() {
+
+  const { pick } = useGame();
+
   return (
     <Container>
       <Counter />
-      <OptionsContainer />
+      {pick ? <FightSummary /> : <OptionsContainer />}
       <Rules />
     </Container>
   );

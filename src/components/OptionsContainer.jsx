@@ -33,7 +33,6 @@ function OptionsContainer() {
         color1="hsl(39, 89%, 49%)"
         color2="hsl(40, 84%, 53%)"
         image="./images/icon-scissors.svg"
-        position="top-right"
         positionTop={2}
         positionLeft={65}
       />
@@ -42,7 +41,6 @@ function OptionsContainer() {
         color1="hsl(349, 71%, 52%)"
         color2="hsl(349, 70%, 56%)"
         image="./images/icon-rock.svg"
-        position="bottom"
         positionTop={40}
         positionLeft={37}
       />

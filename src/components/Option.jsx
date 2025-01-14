@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import styled from "styled-components";
+import { useGame } from "../context/GameProvider";
 
 // const Container = styled.div`
 //   border: 10px solid ${(props) => props.color};
@@ -8,15 +9,19 @@ import styled from "styled-components";
 
 // Styled component for the coin
 const Container = styled.div`
-  position: absolute;
+  position: ${(props) => props?.position || "absolute"};
   background-color: black;
   border-radius: 50%;
   padding: 1.5rem;
   top: ${(props) => props.positionTop + "vh"};
   left: ${(props) => props.positionLeft + "%"};
-  background: linear-gradient(${(props) => props?.color2}, ${(props) => props?.color1});
+  background: linear-gradient(
+    ${(props) => props?.color2},
+    ${(props) => props?.color1}
+  );
   box-shadow: inset 0em -0.5em ${(props) => props?.color1};
   cursor: pointer;
+  scale: ${(props) => props?.scale};
 `;
 
 const Image = styled.img`
@@ -33,13 +38,18 @@ const ImageContainer = styled.div`
   box-shadow: inset 0em 0.5em #cec0c0;
 `;
 
-function Option({ option, color1, color2, image, positionTop, positionLeft }) {
+function Option({ option, color1, color2, image, positionTop, positionLeft, scale, position }) {
+  const { setPick } = useGame();
+
   return (
     <Container
       color1={color1}
       color2={color2}
       positionTop={positionTop}
       positionLeft={positionLeft}
+      scale={scale}
+      onClick={() => setPick(option)}
+      position={position}
     >
       <ImageContainer>
         <Image src={image} alt={option} />
