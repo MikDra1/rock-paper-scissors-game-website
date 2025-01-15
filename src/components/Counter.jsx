@@ -11,6 +11,12 @@ const Container = styled.div`
   border: 1px solid #fff;
   padding: 1.5rem;
   border-radius: 0.75rem;
+
+  @media (max-width: 700px) {
+    padding: 1rem 1rem 1rem 1.5rem;
+    margin-inline: 1rem;
+    width: auto;
+  }
 `;
 
 const ScoreContainer = styled.div`
@@ -24,12 +30,21 @@ const ScoreContainer = styled.div`
   gap: 0.5rem;
   color: var(--dark-text);
   line-height: 1;
+
+  @media (max-width: 700px) {
+    padding: .75rem 2rem;
+  }
 `;
 
 const TitleContainer = styled.div`
   line-height: 0.9;
   font-size: 1.5rem;
   color: #fff;
+
+  
+  @media (max-width: 700px) {
+    font-size: 1rem;
+  }
 `;
 
 const ScoreNumber = styled.h2`

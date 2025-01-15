@@ -1,12 +1,23 @@
 /* eslint-disable react/prop-types */
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { createContext } from "react";
+import useScreenSize from "../hooks/useScreenSize";
 
 const GameContext = createContext();
 
 function GameProvider({ children }) {
   const [pick, setPick] = useState(null);
   const [score, setScore] = useState(0);
+
+  const [isMobile, setIsMobile] = useState(null);
+  const screenSize = useScreenSize();
+
+  useEffect(
+    function () {
+      setIsMobile(screenSize.width <= 600);
+    },
+    [screenSize.width]
+  );
 
   function handleReset() {
     setPick(null);
@@ -19,7 +30,8 @@ function GameProvider({ children }) {
         setPick,
         score,
         setScore,
-        handleReset
+        handleReset,
+        isMobile
       }}
     >
       {children}

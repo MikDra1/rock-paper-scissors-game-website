@@ -21,7 +21,15 @@ const Container = styled.div`
   box-shadow: inset 0em -0.5em ${(props) => props?.color3};
   cursor: pointer;
   scale: ${(props) => props?.scale};
+  height: fit-content;
 
+  @media (max-width: 400px) {
+    scale: .7;
+  }
+
+  @media (max-width: 360px) {
+    scale: .6;
+  }
 
 `;
 

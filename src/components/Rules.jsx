@@ -6,6 +6,11 @@ const Container = styled.div`
   position: absolute;
   right: 2rem;
   bottom: 2rem;
+
+  @media (max-width: 700px) {
+    right: 50vw;
+    transform: translateX(50%);
+  }
 `;
 
 const Modal = styled.div`
@@ -18,6 +23,11 @@ const Modal = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media (max-width: 700px) {
+   padding: 1rem;
+   width: 80vw;
+  }
 `;
 
 const Overlay = styled.div`
@@ -37,6 +47,10 @@ const RulesButton = styled.button`
   cursor: pointer;
   border: 1px solid #fff;
   color: white;
+
+  @media (max-width: 700px) {
+    
+  }
 `;
 
 function Rules() {
