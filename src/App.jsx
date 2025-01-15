@@ -22,7 +22,7 @@ function App() {
   return (
     <Container>
       <Counter />
-      {pick ? <FightSummary /> : <OptionsContainer />}
+      {pick ? <FightSummary pick={pick} /> : <OptionsContainer />}
       <Rules />
     </Container>
   );

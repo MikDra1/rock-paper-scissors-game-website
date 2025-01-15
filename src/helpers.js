@@ -1,13 +1,20 @@
-export  function getComputerChoice() {
-  const choices = ["rock", "paper", "scissors"];
-  const randomIndex = Math.floor(Math.random() * choices.length);
-  return choices[randomIndex];
+
+export function getComputerChoice() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const choices = ["rock", "paper", "scissors"];
+      const randomIndex = Math.floor(Math.random() * choices.length);
+      resolve(choices[randomIndex]);
+    }, 1000);
+  });
 }
 
 // Function to determine the winner
 export function determineWinner(userChoice, computerChoice) {
+
+  console.log(userChoice, computerChoice);
   if (userChoice === computerChoice) {
-    return "It's a tie!";
+    return "It's a tie";
   }
 
   if (
@@ -15,12 +22,12 @@ export function determineWinner(userChoice, computerChoice) {
     (userChoice === "scissors" && computerChoice === "paper") ||
     (userChoice === "paper" && computerChoice === "rock")
   ) {
-    return "You win!";
+    return "You win";
   }
 
-  return "You lose!";
+  return "You lose";
 }
 
 export function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}

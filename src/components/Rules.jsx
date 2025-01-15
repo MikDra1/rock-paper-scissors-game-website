@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import rules from '../../public/images/image-rules.svg';
 
 const Container = styled.div`
   position: absolute;
@@ -46,7 +47,7 @@ function Rules() {
     {showRules && <Overlay  onClick={() => setShowRules(false)} />}
       {showRules && (
         <Modal>
-          <img src="./images/image-rules.svg" alt="" />
+          <img src={rules} alt="" />
         </Modal>
       )}
       <Container>

@@ -8,6 +8,10 @@ function GameProvider({ children }) {
   const [pick, setPick] = useState(null);
   const [score, setScore] = useState(0);
 
+  function handleReset() {
+    setPick(null);
+  }
+
   return (
     <GameContext.Provider
       value={{
@@ -15,6 +19,7 @@ function GameProvider({ children }) {
         setPick,
         score,
         setScore,
+        handleReset
       }}
     >
       {children}

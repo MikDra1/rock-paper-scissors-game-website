@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useGame } from "../context/GameProvider";
 
 const Container = styled.div`
   display: flex;
@@ -26,16 +27,18 @@ const ScoreContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  line-height: .9;
+  line-height: 0.9;
   font-size: 1.5rem;
   color: #fff;
 `;
 
 const ScoreNumber = styled.h2`
   font-size: 3.5rem;
-`
+`;
 
 function Counter() {
+  const { score } = useGame();
+
   return (
     <Container>
       <TitleContainer>
@@ -45,7 +48,7 @@ function Counter() {
       </TitleContainer>
       <ScoreContainer>
         <h3>SCORE</h3>
-        <ScoreNumber>12</ScoreNumber>
+        <ScoreNumber>{score}</ScoreNumber>
       </ScoreContainer>
     </Container>
   );
