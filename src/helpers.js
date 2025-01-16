@@ -28,6 +28,4 @@ export function determineWinner(userChoice, computerChoice) {
   return "You lose";
 }
 
-export function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+
