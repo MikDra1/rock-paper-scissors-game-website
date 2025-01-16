@@ -10,11 +10,13 @@ function GameProvider({ children }) {
   const [score, setScore] = useState(0);
 
   const [isMobile, setIsMobile] = useState(null);
+  const [isTablet, setIsTablet] = useState(null);
   const screenSize = useScreenSize();
 
   useEffect(
     function () {
       setIsMobile(screenSize.width <= 600);
+      setIsTablet(screenSize.width <= 1150)
     },
     [screenSize.width]
   );
@@ -31,7 +33,8 @@ function GameProvider({ children }) {
         score,
         setScore,
         handleReset,
-        isMobile
+        isMobile,
+        isTablet
       }}
     >
       {children}

@@ -12,7 +12,7 @@ const Container = styled.div`
   padding: 1.5rem;
   border-radius: 0.75rem;
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     padding: 1rem 1rem 1rem 1.5rem;
     margin-inline: 1rem;
     width: auto;
