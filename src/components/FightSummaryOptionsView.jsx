@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import Option from "./Option";
+import { useGame } from "../context/GameProvider";
 
 const BlackContainer = styled.div`
   background-color: #000;
   opacity: 0.2;
-  width: 14vw;
-  height: 14vw;
+  width: 100%;
+  height: 12.5vw;
   border-radius: 100vw;
-    margin-top: 50%;
 
   @media (max-width: 1150px) {
     display: none;
@@ -18,9 +18,10 @@ const BlackContainer = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
   gap: 8rem;
   align-items: center;
-
+  justify-content: space-between;
   @media (max-width: 1150px) {
     gap: 2rem;
   }
@@ -54,6 +55,8 @@ function FightSummaryOptionsView({
   scale,
   children,
 }) {
+  const { isTablet } = useGame();
+
   return (
     <>
       <Wrapper>
@@ -101,7 +104,13 @@ function FightSummaryOptionsView({
       {children}
 
       <Wrapper>
-        {computerChoice && <h3>THE HOUSE PICKED</h3>}
+        {isTablet ? (
+          computerChoice ? (
+            <h3>THE HOUSE PICKED</h3>
+          ) : null
+        ) : (
+          <h3>THE HOUSE PICKED</h3>
+        )}
         {computerChoice ? (
           <div>
             {computerChoice === "paper" && (
