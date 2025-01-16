@@ -47,48 +47,6 @@ const WinnerContainer = styled.div`
 function FightSummaryDesktop({ winner, pick, handleReset, computerChoice }) {
   return (
     <Container>
-      {/* <Wrapper>
-        <h3>YOU PICKED</h3>
-        <div>
-          {pick === "paper" && (
-            <OptionSummary
-              option="paper"
-              color1="hsl(230, 89%, 62%)"
-              color2="hsl(230, 89%, 65%)"
-              color3="#3550d4"
-              image="./images/icon-paper.svg"
-              scale={1.5}
-              position={"relative"}
-              hasWon={winner === "You win"}
-            />
-          )}
-          {pick === "rock" && (
-            <Option
-              option="rock"
-              color1="hsl(349, 71%, 52%)"
-              color2="hsl(349, 70%, 56%)"
-              color3="#a90f2b"
-              image="./images/icon-rock.svg"
-              scale={1.5}
-              position={"relative"}
-              hasWon={winner === "You win"}
-            />
-          )}
-          {pick === "scissors" && (
-            <Option
-              option="scissors"
-              color1="hsl(39, 89%, 49%)"
-              color2="hsl(40, 84%, 53%)"
-              color3="#cb7f1a"
-              image="./images/icon-scissors.svg"
-              scale={1.5}
-              position={"relative"}
-              hasWon={winner === "You win"}
-            />
-          )}
-        </div>
-      </Wrapper> */}
-
       <FightSummaryOptionsView
         scale={1.5}
         winner={winner}
@@ -102,52 +60,6 @@ function FightSummaryDesktop({ winner, pick, handleReset, computerChoice }) {
           </WinnerContainer>
         )}
       </FightSummaryOptionsView>
-      {/* <Wrapper>
-        <h3>THE HOUSE PICKED</h3>
-
-        {computerChoice ? (
-          <div>
-            {computerChoice === "paper" && (
-              <OptionSummary
-                option="paper"
-                color1="hsl(230, 89%, 62%)"
-                color2="hsl(230, 89%, 65%)"
-                color3="#3550d4"
-                image="./images/icon-paper.svg"
-                scale={1.5}
-                position={"relative"}
-                hasWon={winner === "You lose"}
-              />
-            )}
-            {computerChoice === "scissors" && (
-              <Option
-                option="scissors"
-                color1="hsl(39, 89%, 49%)"
-                color2="hsl(40, 84%, 53%)"
-                color3="#cb7f1a"
-                image="./images/icon-scissors.svg"
-                scale={1.5}
-                position={"relative"}
-                hasWon={winner === "You lose"}
-              />
-            )}
-            {computerChoice === "rock" && (
-              <Option
-                option="rock"
-                color1="hsl(349, 71%, 52%)"
-                color2="hsl(349, 70%, 56%)"
-                color3="#a90f2b"
-                image="./images/icon-rock.svg"
-                scale={1.5}
-                position={"relative"}
-                hasWon={winner === "You lose"}
-              />
-            )}
-          </div>
-        ) : (
-          <BlackContainer></BlackContainer>
-        )}
-      </Wrapper> */}
     </Container>
   );
 }
